@@ -1,0 +1,32 @@
+<div class="jumbotron">
+    <h1>Thank you</h1>
+    <p>
+        <div class="list-group">
+            <div class="list group-item">
+                <b>Email&nbsp;</b><?php echo $this->post->email ?>
+            </div>
+
+            <div class="list group-item">
+                <b>Name&nbsp;</b><?php echo $this->post->name ?>
+            </div>
+
+            <div class="list group-item">
+                <b>Website&nbsp;</b><?php echo $this->post->website ?>
+            </div>
+
+            <div class="list group-item">
+                <b>Message&nbsp;</b><?php echo $this->post->message ?>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <a href="/left-post" class="col-md-3 btn btn-lg btn-primary">Create more</a>
+            <div class="col-md-3"></div>
+            <a href="/" class="col-md-3 btn btn-lg btn-warning">To main</a>
+
+        </div>
+
+    </p>
+</div>

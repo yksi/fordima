@@ -1,0 +1,45 @@
+<h2 class="page-header text-danger">Just write</h2>
+<form action="/save-post" method="post">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="input-group <?php if (isset($this->errors['name-error'])) { echo "has-error"; } ?>">
+				<span class="input-group-addon text-danger">*</span>
+				<input type="text" class="form-control" name="user_name" placeholder="Name">
+			</div>
+			<br>
+
+			<div class="input-group <?php if (isset($this->errors['email-error'])) { echo "has-error"; } ?>">
+				<span class="input-group-addon text-danger">*</span>
+				<input type="text" class="form-control" name="user_email" placeholder="Email">
+			</div>
+			<br>
+
+			<div class="input-group">
+				<span class="input-group-addon text-danger">&nbsp;</span>
+				<input type="text" class="form-control" name="user_website" placeholder="Website">
+			</div>
+			<br>
+
+			<div class="input-group <?php if (isset($this->errors['message-error'])) { echo "has-error"; } ?>">
+				<span class="input-group-addon text-danger">*</span>
+				<textarea rows="4" class="form-control" name="message" placeholder="Message"></textarea> 
+				</div>
+			<br>
+			<span class="text-danger">*</span>
+			<pre align="center" style="font-size:5px;font-weight:bold"><?php echo $this->capcha; ?></pre>
+			<input type="text" class="form-control" placeholder="Verify capcha" name="capcha">
+			<br>
+
+			<div class="text-right">
+				<button class="btn btn-success">Send Post</button>
+			</div>
+			</div>
+			<div class="col-md-6">
+				<?php if (!empty($this->errors)) : ?>
+					<?php foreach($this->errors as $error) : ?>
+						<div class="alert alert-danger"><?php echo $error ?></div>
+					<?php endforeach; ?>
+				<?php endif; ?>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,52 @@
+<div class="text-center">
+    <?php if (!!$this->prevPage) { ?>
+        <a class="btn" href="/post-list/<?php echo $this->prevPage ?>">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+    <?php } ?>
+
+    <?php if (!!$this->nextPage) : ?>
+        <a class="btn" href="/post-list/<?php echo $this->nextPage ?>">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    <?php endif; ?>
+</div>
+<br>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Website</th>
+        <th>Message</th>
+    </tr>
+    <?php foreach($this->posts as $post) : ?>
+        <tr>
+            <td class="text-center">
+                <a href="mailto:<?php echo $post->email ?>"><?php echo $post->email ?></a>
+            </td>
+            <td><b><?php echo $post->name ?></b></td>
+            <td><a href="<?php echo $post->website ?>"><?php echo $post->website ?></a></td>
+            <td class="list-group-item-success">
+                <div class="well ">
+                    <?php echo $post->message ?>
+                </div>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+<div class="text-center">
+    <?php if (!!$this->prevPage) { ?>
+        <a class="btn" href="/post-list/<?php echo $this->prevPage ?>">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+    <?php } ?>
+
+    <?php if (!!$this->nextPage) : ?>
+        <a class="btn" href="/post-list/<?php echo $this->nextPage ?>">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    <?php endif; ?>
+</div>
